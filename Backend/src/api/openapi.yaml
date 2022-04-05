@@ -1,71 +1,245 @@
 openapi: 3.0.0
 info:
-  title: MyAPP
-  description: "__ TODO: Diese Datei durch eine eigene API-Spezifikation ersetzen. __"
+  title: em-Eukal-App
+  version: '1.0'
+  description: 'Diese API dient der Em-Eukal Produktbewertungsapp und bietet Endpunkte zum Erstellen, Löschen und Bearbeiten von Produkteinträgen und dazugehöriger Bewertungen. '
   contact:
-    name: Dennis Schulmeister-Zimolong
-    url: https://www.wpvs.de
-    email: dhbw@windows3.de
-  license:
-    name: CC-BY-4.0
-    url: https://creativecommons.org/licenses/by/4.0/deed.de
-  version: "1.0"
+    name: Pfängerle und Meyrle AG
+    email: support@PuMAG.com
+    url: PuMAG.com
 servers:
-- url: http://localhost:3000
-tags:
-- name: Beispiel
+  - url: 'http://localhost:3000'
+    description: Julia Pfanger
 paths:
-  /:
+  /products:
     get:
-      tags:
-      - Index
-      summary: Wurzeladresse des Webservices
-      description: Liefert eine HATEOAS-Übersicht aller collections
-      operationId: index
+      summary: Your GET endpoint
+      tags: []
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/HATEOAS_Collection'
-                x-content-type: application/json
-
+                  $ref: '#/components/schemas/Product'
+      operationId: get-products
+      description: Liefert alle Produkteinträge
+    post:
+      summary: ''
+      operationId: post-products
+      responses: {}
+      description: Erstellt neuen Produkteintrag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        description: ''
+  '/products/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Not Found
+      operationId: get-products-id
+      description: Liefert Produkteintrag mit dieser ID
+    put:
+      summary: ''
+      operationId: put-products-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Aktualisiert einen Produkteintrag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+    patch:
+      summary: ''
+      operationId: patch-products-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Aktualisiert einzelne Werte des Produkteintrages
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        description: ''
+    delete:
+      summary: ''
+      operationId: delete-products-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Löscht Produkteintrag
+  /reviews:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+      operationId: get-reviews
+      description: Liefert Produktbewertungen
+    post:
+      summary: ''
+      operationId: post-reviews
+      responses:
+        '200':
+          description: OK
+      description: Erstellt neue Produktbewertung
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+        description: ''
+  '/reviews/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+        '404':
+          description: Not Found
+      operationId: get-reviews-id
+      description: Liefert einzelne Produktbewertung
+    put:
+      summary: ''
+      operationId: put-reviews-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Aktualisiert eine Produktbewertung
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+    patch:
+      summary: ''
+      operationId: patch-reviews-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Aktualisiert einzelne Werte einer Produktbewertung
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+    delete:
+      summary: ''
+      operationId: delete-reviews-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Löscht einzelne Produktbewertung
+  '/productReviews/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Review'
+      operationId: get-productReviews-id
+      description: Liefert Produktbewertungen zum Produkt der angegebenen ID
 components:
   schemas:
-    HATEOAS_Collection:
-      title: HATEOAS-Links einer Collection
+    Product:
+      title: Product
       type: object
       properties:
-        _name:
+        id:
+          type: integer
+        name:
           type: string
-        query:
-          $ref: '#/components/schemas/HATEOAS_Link'
-        create:
-          $ref: '#/components/schemas/HATEOAS_Link'
-
-    HATEOAS_Resource:
-      title: HATEOAS-Links einer Resource
+        picture_url:
+          type: string
+        like:
+          type: integer
+        dislike:
+          type: integer
+        description:
+          type: string
+    Review:
+      title: Review
       type: object
       properties:
-        read:
-          $ref: '#/components/schemas/HATEOAS_Link'
-        update:
-          $ref: '#/components/schemas/HATEOAS_Link'
-        patch:
-          $ref: '#/components/schemas/HATEOAS_Link'
-        delete:
-          $ref: '#/components/schemas/HATEOAS_Link'
-
-    HATEOAS_Link:
-      title: HATEOAS-Link
-      type: object
-      properties:
-        url:
+        id:
+          type: integer
+        product_id:
+          type: integer
+        name:
           type: string
-        method:
+        comment:
           type: string
-
+        like:
+          type: boolean
   securitySchemes: {}
