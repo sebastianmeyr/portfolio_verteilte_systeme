@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Dummy-Data; Changed Console-Output">
-      <change afterPath="$PROJECT_DIR$/Backend/src/controller/product.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/service/product.service.js" afterDir="false" />
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Expanded ProductController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/controller/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/product.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/service/product.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/service/product.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <workItem from="1647776858811" duration="169000" />
       <workItem from="1648036385094" duration="137000" />
       <workItem from="1649159215692" duration="6246000" />
-      <workItem from="1651504222050" duration="3645000" />
+      <workItem from="1651504222050" duration="4530000" />
     </task>
     <task id="LOCAL-00001" summary="Added template project">
       <created>1647616227893</created>
@@ -104,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651508964525</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Expanded ProductController">
+      <created>1651511156384</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651511156384</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +131,7 @@
     <MESSAGE value="Added template project" />
     <MESSAGE value="Updated openapi.yaml" />
     <MESSAGE value="Dummy-Data; Changed Console-Output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dummy-Data; Changed Console-Output" />
+    <MESSAGE value="Expanded ProductController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Expanded ProductController" />
   </component>
 </project>

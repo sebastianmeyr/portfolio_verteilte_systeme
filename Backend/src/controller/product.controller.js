@@ -11,8 +11,8 @@ export default class ProductController {
 
         //Entity
         server.get(prefix + "/:id", wrapHandler(this, this.read));
-        server.put(prefix + "/:id", wrapHandler(this, this.put));
-        server.patch(prefix + "/:id", wrapHandler(this, this.patch));
+        server.put(prefix + "/:id", wrapHandler(this, this.update));
+        server.patch(prefix + "/:id", wrapHandler(this, this.update));
         server.del(prefix + "/:id", wrapHandler(this, this.delete));
     }
 
@@ -49,8 +49,8 @@ export default class ProductController {
         return next();
     }
 
-    //PUT /products/:id
-    async put(req, res, next) {
+    //PUT / PATCH /products/:id
+    async update(req, res, next) {
         let result = await this._service.update(req.params.id, req.body);
 
         if(result) {
@@ -61,20 +61,6 @@ export default class ProductController {
 
         return next();
     }
-
-    //PATCH /products/:id
-    async patch(req, res, next) {
-        let result = await this._service.update(req.params.id, req.body);
-
-        if(result) {
-            res.sendResult(result);
-        } else {
-            throw new RestifyError.NotFoundError("Produkt nicht gefunden");
-        }
-
-        return next();
-    }
-
 
     //DELETE /products/:id
     async delete(req, res, next) {
