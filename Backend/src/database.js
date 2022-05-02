@@ -33,23 +33,97 @@ class DatabaseFactory {
     async _createDemoData() {
         //// TODO: Methode anpassen, um zur eigenen App passende Demodaten anzulegen ////
         //// oder die Methode ggf. einfach löschen und ihren Aufruf oben entfernen.  ////
-        let examples = this.database.collection("example");
+        let demoProducts = this.database.collection("products");
+        let demoReviews = this.database.collection("reviews");
 
-        if (await examples.estimatedDocumentCount() === 0) {
-            examples.insertMany([
+        if (await demoProducts.estimatedDocumentCount() === 0) {
+            demoProducts.insertMany([
                 {
-                    title: "Cloud Native Architecture and Design",
-                    author: "Shivakumar R Goniwada",
-                    publisher: "Apress",
-                    year: 2022,
+                    name: "Em-eukal Klassisch",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2400_EE_Klassisch_zh_150g__2020.png",
+                    like: 125,
+                    dislike: 3,
+                    description: "Unser Klassiker ist berühmt für seine starke Kombination aus Eukalyptusöl und Menthol. Und sorgt so immer und überall für einen besonderen Geschmack, der Wirkung zeigt. Nach dem Originalrezept von Dr. Carl Soldan aus dem Jahr 1923.",
                 },
                 {
-                    title: "Machine Learning Kompakt",
-                    author: "Andriy Burkov",
-                    publisher: "mitp",
-                    year: 2019,
+                    name: "Em-eukal Zitrone",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2420_EE_Zitrone_zfr_75g__2020.png",
+                    like: 21,
+                    dislike: 75,
+                    description: "Das spritzige Premiumbonbon mit einer angenehmen Zitronennote, feinen Extrakten aus der Zitronenmelisse und kühlendem Menthol. Für ein herrlich erfrischendes, fruchtiges Geschmackserlebnis.",
+                },
+                {
+                    name: "Em-eukal Waldkirsche",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2415_EE_Wildkirsche_zfr_75g__2020.png",
+                    like: 93,
+                    dislike: 7,
+                    description: "In diesem Premiumbonbon treffen sich hochwertige, natürliche Zutaten. Es vereint den Geschmack von fruchtigen Wildkirschen mit kühlendem Menthol. Und das zeigt Wirkung. Immer und überall!",
+                },
+                {
+                    name: "Em-eukal Johannisbeere",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2430_EE_Johannisbeere_zfr_75g__2020.png",
+                    like: 42,
+                    dislike: 12,
+                    description: "Erfrischung pur: Dieses Premiumbonbon mit dem Geschmack von Schwarzer Johannisbeere schmeckt fruchtig-frisch und überrascht den Gaumen. Das Tüpfelchen auf dem i? Seine köstliche Füllung.",
+                },
+                {
+                    name: "Em-eukal Salbei",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2450_EE_Salbei_zh_75g__2020.png",
+                    like: 12,
+                    dislike: 5,
+                    description: "Aromatisch und kräuterig-frisch umschmeichelt das Salbeibonbon den Gaumen. Jedes einzelne dieser Premiumbonbons enthält feinen Salbeiextrakt und hochwertige ätherische Öle. Lecker wirkt immer!",
+                },
+                {
+                    name: "Em-eukal Honig",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2445_EE_Honig_gefuellt_zh_75g__2020.png",
+                    like: 2,
+                    dislike: 89,
+                    description: "Eine Komposition der Extraklasse: Dieses Premiumbonbon enthält sanften Yucatan-Honig. Und sorgt angenehm mild für einen ganz besonderen Geschmack, der seine Wirkung zeigt.",
+                },
+                {
+                    name: "Em-eukal Anis-Fenchel",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2455_EE_Anis-Fenchel_zfr_75g__2020.png",
+                    like: 9,
+                    dislike: 37,
+                    description: "Eine traditionelle Bonbonspezialität – mit ätherischen Ölen und feinem Anis- und Fenchelextrakt. Die sorgsam ausgewählten Ingredienzien sorgen für einen kräutersanften Geschmack, der seine Wirkung zeigt.",
+                },
+                {
+                    name: "Em-eukal Milde Minze",
+                    picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2437_EE_MildeMinze_zfr_75g__2020.png",
+                    like: 98,
+                    dislike: 7,
+                    description: "Dieses Premiumbonbon verspricht Extra-Genuss: Ätherische Öle aus der Mitcham-Minze verwöhnen angenehm mild. Und zusammen mit hochwertigen, natürlichen Zutaten entsteht ein intensiv-erfrischendes Gaumenaroma.",
                 },
             ]);
+        }
+
+        if (await demoReviews.estimatedDocumentCount() === 0) {
+            demoReviews.insertMany([
+                {
+                    product_id: 1,
+                    name: "Ursula123",
+                    comment: "Hallo liebe Em-eukal Liebhaber!!! Das klassische Em-eukal ist einfach das beste! <3 Ich habe es vergangenen Mittwoch meinem lieben Enkel Ferdinand gekauft. Sehr erfreut war der Bub!! <3 Ich trage seit dem immer mindestens eine Packung Em-eukal-Klassisch in meiner selbstgestrickten Handtasche!! Liebste Grüße aus der Südpfalz, eure Ursula und Manfred.",
+                    like: true
+                },
+                {
+                    product_id: 2,
+                    name: "",
+                    comment: "",
+                    like: true
+                },
+                {
+                    product_id: 3,
+                    name: "",
+                    comment: "",
+                    like: true
+                },
+                {
+                    product_id: 4,
+                    name: "",
+                    comment: "",
+                    like: true
+                },
+            ])
         }
     }
 }

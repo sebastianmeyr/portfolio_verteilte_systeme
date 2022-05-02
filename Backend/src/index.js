@@ -98,18 +98,18 @@ server.listen(config.port, config.host, function() {
     //// TODO: Konsolenausgabe anpassen (Name des Services usw.) ////
     console.log();
     console.log("=============");
-    console.log("MyApp-Server");
+    console.log("Em-eukal-Server");
     console.log("=============");
     console.log();
-    console.log("Ausführung mit folgender Konfiguration:");
+    console.log("Verwendete Konfiguration:");
     console.log();
     console.log(config);
     console.log();
     console.log("Nutzen Sie die folgenden Umgebungsvariablen zum Anpassen der Konfiguration:");
     console.log();
-    console.log("  » PORT:    TCP-Port, auf dem der Webserver erreichbar ist");
-    console.log("  » HOST:    Hostname oder IP-Addresse, auf welcher der Webserver erreichbar ist");
-    console.log("  » MONGODB: URL-String mit den Verbindungsdaten zur Mongo-Datenbank");
+    console.log("    PORT:    Server-TCP-Port");
+    console.log("    HOST:    Hostname oder IP-Adresse des Servers");
+    console.log("    MONGODB: Verbindungsdaten zur Mongo-DB");
     console.log();
     console.log(`OpenAPI-Spezifikation: ${openApiFile}`)
 
