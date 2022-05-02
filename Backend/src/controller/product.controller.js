@@ -39,15 +39,6 @@ export default class ProductController {
 
         return next();
     }
-    /*
-    {
-    "name" : "Test",
-    "picture_url": "Test",
-    "like": 11,
-    "dislike": 12,
-    "description": "Test"
-}
-     */
 
     //GET /products/:id
     async read(req, res, next) {
@@ -78,7 +69,7 @@ export default class ProductController {
     //DELETE /products/:id
     async delete(req, res, next) {
         await this._service.delete(req.params.id)
-        res.status(404);
+        res.status(200);
         res.sendResult({});
         return next();
     }
