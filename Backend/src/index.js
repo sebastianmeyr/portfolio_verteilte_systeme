@@ -11,6 +11,7 @@ import RootController from "./controller/root.controller.js";
 // Verzeichnisnamen der Quellcodedatei ermitteln
 import path from "path";
 import { fileURLToPath } from "url";
+import ProductController from "./controller/product.controller.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /* =============================================================================
@@ -92,10 +93,10 @@ server.use(OpenApiEnforcerMiddleware(openApiEnforcer));
 // HTTP-Controller registrieren
 //// TODO: Weitere Controller-Klassen hinufügen ////
 new RootController(server, "/");
+new ProductController(server, "/products");
 
 // Server tatsächlich starten
 server.listen(config.port, config.host, function() {
-    //// TODO: Konsolenausgabe anpassen (Name des Services usw.) ////
     console.log();
     console.log("=============");
     console.log("Em-eukal-Server");
