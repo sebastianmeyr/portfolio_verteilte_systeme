@@ -30,8 +30,12 @@ paths:
       summary: ''
       operationId: post-products
       responses:
-        '200':
-          description: OK
+        "201":
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
       description: Erstellt neuen Produkteintrag
       requestBody:
         content:

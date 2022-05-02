@@ -34,11 +34,20 @@ export default class ProductController {
 
         res.status(201);
         // TODO: ???
-        //res.header("Location", `${this._prefix}/${result._id}`);
+        res.header("Location", `${this._prefix}/${result._id}`);
         res.sendResult(result);
 
         return next();
     }
+    /*
+    {
+    "name" : "Test",
+    "picture_url": "Test",
+    "like": 11,
+    "dislike": 12,
+    "description": "Test"
+}
+     */
 
     //GET /products/:id
     async read(req, res, next) {
