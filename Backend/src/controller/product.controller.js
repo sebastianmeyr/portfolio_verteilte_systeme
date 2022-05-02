@@ -1,4 +1,8 @@
+"use strict"
+
 import {wrapHandler} from "../utils.js";
+import ProductService from "../service/product.service.js";
+import RestifyError from "restify-errors";
 
 export default class ProductController {
     constructor(server, prefix) {

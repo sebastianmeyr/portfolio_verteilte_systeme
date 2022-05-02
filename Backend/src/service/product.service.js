@@ -6,12 +6,12 @@ import {ObjectId} from "mongodb";
 export default class ProductService {
 
     constructor() {
-        this._products = DatabaseFactory.database.collection("demoProducts");
+        this._products = DatabaseFactory.database.collection("products");
     }
 
     //Alle Produkte auslesen.
     async readAll(query) {
-        let cursor = this._products.find(query);
+        let cursor = this._products.find(query, {});
 
         return cursor.toArray();
     }
@@ -35,14 +35,14 @@ export default class ProductService {
 
 
     //Bestimmtes Produkt auslesen
-    async update(id) {
+    async read(id) {
         let result = await this._products.findOne({_id: new ObjectId(id)});
 
         return result;
     }
 
     //Bearbeiten eines bestimmten Produkts
-    async update(id, a) {
+    async update(id, product) {
         let antiqueProduct = await this._products.findOne({_id: new ObjectId(id)});
 
         if(!antiqueProduct) return;
@@ -61,7 +61,7 @@ export default class ProductService {
 
     //Löschen eines bestimmten Produktes
     async delete(id) {
-        let result = await this._products.delteOne({id: new ObjectId(id)});
+        let result = await this._products.deleteOne({id: new ObjectId(id)});
         return result.deletedCount;
     }
 }

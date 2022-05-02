@@ -107,20 +107,20 @@ class DatabaseFactory {
                 },
                 {
                     product_id: 2,
-                    name: "",
-                    comment: "",
+                    name: "asdasd",
+                    comment: "asdasd",
                     like: true
                 },
                 {
                     product_id: 3,
-                    name: "",
-                    comment: "",
+                    name: "haksdhja",
+                    comment: "haksdhjlkal",
                     like: true
                 },
                 {
                     product_id: 4,
-                    name: "",
-                    comment: "",
+                    name: "lkajlsjdl",
+                    comment: "alksdl",
                     like: true
                 },
             ])

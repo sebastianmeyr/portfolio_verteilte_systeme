@@ -7,11 +7,11 @@ import OpenApiEnforcerMiddleware from "@dschulmeis/restify-openapi-enforcer-midd
 //// TODO: Klasse ExampleController durch eigene Controller-Klassen ersetzen ////
 import DatabaseFactory from "./database.js";
 import RootController from "./controller/root.controller.js";
+import ProductController from "./controller/product.controller.js";
 
 // Verzeichnisnamen der Quellcodedatei ermitteln
 import path from "path";
 import { fileURLToPath } from "url";
-import ProductController from "./controller/product.controller.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /* =============================================================================

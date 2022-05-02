@@ -29,7 +29,9 @@ paths:
     post:
       summary: ''
       operationId: post-products
-      responses: {}
+      responses:
+        '200':
+          description: OK
       description: Erstellt neuen Produkteintrag
       requestBody:
         content:
