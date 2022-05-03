@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Implemented ProductService">
-      <change afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Fixes OpenApi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/controller/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/product.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/controller/review.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/review.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/service/product.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/service/product.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/service/review.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/service/review.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +32,7 @@
   </component>
   <component name="ProjectId" id="25vObRwGUntcJHwF1IjhVS0e8Ea" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -84,7 +83,7 @@
       <workItem from="1647776858811" duration="169000" />
       <workItem from="1648036385094" duration="137000" />
       <workItem from="1649159215692" duration="6246000" />
-      <workItem from="1651504222050" duration="8155000" />
+      <workItem from="1651504222050" duration="10143000" />
     </task>
     <task id="LOCAL-00001" summary="Added template project">
       <created>1647616227893</created>
@@ -121,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651512623498</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Expanded ProductController, ProductService; Fixes openApi">
+      <created>1651515888585</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651515888585</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixes OpenApi">
+      <created>1651517091211</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651517091211</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +158,8 @@
     <MESSAGE value="Dummy-Data; Changed Console-Output" />
     <MESSAGE value="Expanded ProductController" />
     <MESSAGE value="Implemented ProductService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented ProductService" />
+    <MESSAGE value="Expanded ProductController, ProductService; Fixes openApi" />
+    <MESSAGE value="Fixes OpenApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes OpenApi" />
   </component>
 </project>

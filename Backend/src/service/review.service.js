@@ -21,10 +21,10 @@ export default class ReviewService {
         review = review || {};
 
         let newReview = {
+            product_id:     review.product_id || 0,
             name:           review.name || "",
-            like:           review.like || true,
-            product_id:     review.product_id || "",
-            comment:        review.comment || ""
+            comment:        review.comment || "",
+            like:           review.like || true
         };
 
         let result = await this._reviews.insertOne(newReview);
@@ -48,10 +48,10 @@ export default class ReviewService {
 
         let advancedReview = { $set: {} }
 
-        if (review.name) advancedReview.$set.name = review.name;
         if (review.product_id) advancedReview.$set.product_id = review.product_id;
-        if (review.like) advancedReview.$set.like = review.like;
+        if (review.name) advancedReview.$set.name = review.name;
         if (review.comment) advancedReview.$set.comment = review.comment;
+        if (review.like) advancedReview.$set.like = review.like;
 
         await this._reviews.updateOne({_id: new ObjectId(id)}, advancedReview);
         return this._reviews.findOne({_id: new ObjectId(id)});

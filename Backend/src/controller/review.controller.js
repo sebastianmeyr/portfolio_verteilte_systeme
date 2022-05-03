@@ -6,7 +6,7 @@ import RestifyError from "restify-errors";
 
 export default class ReviewController {
     constructor(server, prefix) {
-        this._service = new ProductService();
+        this._service = new ReviewService();
         this._prefix = prefix;
 
         //Collection
@@ -68,7 +68,7 @@ export default class ReviewController {
     //DELETE /review/:id
     async delete(req, res, next) {
         await this._service.delete(req.params.id)
-        res.status(404);
+        res.status(200);
         res.sendResult({});
         return next();
     }

@@ -121,8 +121,12 @@ paths:
       summary: ''
       operationId: post-reviews
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
       description: Erstellt neue Produktbewertung
       requestBody:
         content:
@@ -139,7 +143,7 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags: []
+      tags: [ ]
       responses:
         '200':
           description: OK
@@ -147,10 +151,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Review'
-            application/xml:
-              schema:
-                type: object
-                properties: {}
         '404':
           description: Not Found
       operationId: get-reviews-id

@@ -68,7 +68,7 @@ export default class ProductController {
     //DELETE /products/:id
     async delete(req, res, next) {
         await this._service.delete(req.params.id)
-        res.status(404);
+        res.status(200);
         res.sendResult({});
         return next();
     }

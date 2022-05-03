@@ -4,10 +4,10 @@ import restify from "restify";
 import OpenApiEnforcer from "openapi-enforcer";
 import OpenApiEnforcerMiddleware from "@dschulmeis/restify-openapi-enforcer-middleware";
 
-//// TODO: Klasse ExampleController durch eigene Controller-Klassen ersetzen ////
 import DatabaseFactory from "./database.js";
 import RootController from "./controller/root.controller.js";
 import ProductController from "./controller/product.controller.js";
+import ReviewController from "./controller/review.controller.js";
 
 // Verzeichnisnamen der Quellcodedatei ermitteln
 import path from "path";
@@ -91,16 +91,16 @@ const openApiEnforcer = await OpenApiEnforcer(openApiFile, {
 server.use(OpenApiEnforcerMiddleware(openApiEnforcer));
 
 // HTTP-Controller registrieren
-//// TODO: Weitere Controller-Klassen hinufügen ////
 new RootController(server, "/");
 new ProductController(server, "/products");
+new ReviewController(server, "/reviews");
 
 // Server tatsächlich starten
 server.listen(config.port, config.host, function() {
     console.log();
-    console.log("=============");
+    console.log("----------------");
     console.log("Em-eukal-Server");
-    console.log("=============");
+    console.log("----------------");
     console.log();
     console.log("Verwendete Konfiguration:");
     console.log();
