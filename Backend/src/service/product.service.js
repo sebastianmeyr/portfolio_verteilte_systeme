@@ -61,7 +61,7 @@ export default class ProductService {
 
     //Löschen eines bestimmten Produktes
     async delete(id) {
-        let result = await this._products.deleteOne({id: new ObjectId(id)});
+        let result = await this._products.deleteOne({_id: new ObjectId(id)});
         return result.deletedCount;
     }
 }

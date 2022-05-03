@@ -67,9 +67,16 @@ export default class ProductController {
 
     //DELETE /products/:id
     async delete(req, res, next) {
-        await this._service.delete(req.params.id)
-        res.status(200);
+        let result = await this._service.delete(req.params.id)
+
+        if(result){
+            res.status(200);
+        }else{
+            throw new RestifyError.NotFoundError("Es wurde kein Eintrag gelöscht");
+        }
+
         res.sendResult({});
+
         return next();
     }
 }

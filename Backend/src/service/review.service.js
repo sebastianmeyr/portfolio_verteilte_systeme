@@ -59,7 +59,7 @@ export default class ReviewService {
 
     //Löschen einer bestimmten Produktbewertung
     async delete(id) {
-        let result = await this._reviews.deleteOne({id: new ObjectId(id)});
+        let result = await this._reviews.deleteOne({_id: new ObjectId(id)});
         return result.deletedCount;
     }
 }
