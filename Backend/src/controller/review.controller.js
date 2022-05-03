@@ -1,10 +1,10 @@
 "use strict"
 
 import {wrapHandler} from "../utils.js";
-import ProductService from "../service/product.service.js";
+import ReviewService from "../service/review.service.js";
 import RestifyError from "restify-errors";
 
-export default class ProductController {
+export default class ReviewController {
     constructor(server, prefix) {
         this._service = new ProductService();
         this._prefix = prefix;
@@ -20,7 +20,7 @@ export default class ProductController {
         server.del(prefix + "/:id", wrapHandler(this, this.delete));
     }
 
-    //GET /products
+    //GET /reviews
     async readAll(req, res, next) {
         let result = await this._service.readAll(req.query);
         res.sendResult(result);
@@ -28,7 +28,7 @@ export default class ProductController {
         return next();
     }
 
-    //POST /products
+    //POST /reviews
     async create(req, res, next) {
         let result = await this._service.create(req.body);
 
@@ -39,33 +39,33 @@ export default class ProductController {
         return next();
     }
 
-    //GET /products/:id
+    //GET /reviews/:id
     async read(req, res, next) {
         let result = await this._service.read(req.params.id);
 
         if (result) {
             res.sendResult(result);
         } else {
-            throw new RestifyError.NotFoundError("Produkt nicht gefunden.");
+            throw new RestifyError.NotFoundError("Produktbewertung nicht gefunden.");
         }
 
         return next();
     }
 
-    //PUT / PATCH /products/:id
+    //PUT / PATCH /review/:id
     async update(req, res, next) {
         let result = await this._service.update(req.params.id, req.body);
 
         if(result) {
             res.sendResult(result);
         } else {
-            throw new RestifyError.NotFoundError("Produkt nicht gefunden");
+            throw new RestifyError.NotFoundError("Produktbewertung nicht gefunden");
         }
 
         return next();
     }
 
-    //DELETE /products/:id
+    //DELETE /review/:id
     async delete(req, res, next) {
         await this._service.delete(req.params.id)
         res.status(404);
