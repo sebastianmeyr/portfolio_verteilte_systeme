@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Fixes product_review.controller.js, openapi.yaml">
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Adjusted app.css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651690527660</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Adjusted app.css">
+      <created>1651692415286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651692415286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +174,7 @@
     <MESSAGE value="Implemented ProductReviewController" />
     <MESSAGE value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
     <MESSAGE value="Fixes product_review.controller.js, openapi.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes product_review.controller.js, openapi.yaml" />
+    <MESSAGE value="Adjusted app.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted app.css" />
   </component>
 </project>

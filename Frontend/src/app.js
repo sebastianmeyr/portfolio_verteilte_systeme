@@ -87,9 +87,6 @@ class App {
         // Stylesheet der Seite einfügen
         this._pageCssElement.innerHTML = page.css;
 
-        // Aktuelle Seite im Kopfbereich hervorheben
-        this._menuElement.querySelectorAll("li").forEach(li => li.classList.remove("active"));
-        this._menuElement.querySelectorAll(`li[data-page-name="${name}"]`).forEach(li => li.classList.add("active"));
 
         // Sichtbaren Hauptinhalt austauschen
         this._bodyElement.querySelector("main")?.remove();

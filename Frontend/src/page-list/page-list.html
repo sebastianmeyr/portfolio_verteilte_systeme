@@ -1,12 +1,49 @@
 <!-- Stylesheet der Seite -->
 <style>
     /* TODO: Stylesheet definieren  */
-    main {
-        color: red;
+    .entry-div {
+        display: flex;
+        flex-direction: row;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .info-div {
+        width: 100%;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
     }
 </style>
 
 <!-- Inhalt der Seite -->
 <main>
     <!-- TODO: HTML-Gerüst definieren -->
+    <ol>
+        <li class="empty-placeholder">
+            <div class="name">
+                <!-- TODO: Andere Formulierung finden -->
+                Zurzeit nicht verfügbar :(
+            </div>
+        </li>
+
+        <li class="list-entry" data-id="$ID$">
+            <div class="action-click">
+                <div class="entry-div">
+                    <div>
+                        <img src="$PICTURE_URL$">
+                    </div>
+                    <div class="info-div">
+                        <h3>$NAME$</h3>
+                        <p>Likes: $LIKE$</p>
+                        <p>Dislikes: $DISLIKE$</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ol>
 </main>
