@@ -32,7 +32,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
       * Übersicht über die vorhandenen Collections liefern
       */
      async index(req, res, next) {
-         //// TODO: Example-Collection hier durch eigene Collections ersetzen ////
          res.sendResult([
              // {
              //     _name: "example",

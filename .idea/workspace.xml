@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml 🤮">
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Fixes product_review.controller.js, openapi.yaml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/controller/product_review.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/product_review.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/root.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651687754723</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixes product_review.controller.js, openapi.yaml">
+      <created>1651690527660</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651690527660</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +166,7 @@
     <MESSAGE value="Fixed bugs" />
     <MESSAGE value="Implemented ProductReviewController" />
     <MESSAGE value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
+    <MESSAGE value="Fixes product_review.controller.js, openapi.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes product_review.controller.js, openapi.yaml" />
   </component>
 </project>
