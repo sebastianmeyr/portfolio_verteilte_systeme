@@ -201,19 +201,16 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags: []
+      tags: [ ]
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  '':
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Review'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
       operationId: get-productReviews-id
       description: Liefert Produktbewertungen zum Produkt der angegebenen ID
 components:
@@ -223,7 +220,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
         name:
           type: string
         picture_url:
@@ -239,9 +236,9 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
         product_id:
-          type: integer
+          type: string
         name:
           type: string
         comment:

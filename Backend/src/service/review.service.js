@@ -21,7 +21,7 @@ export default class ReviewService {
         review = review || {};
 
         let newReview = {
-            product_id:     review.product_id || 0,
+            product_id:     review.product_id || "",
             name:           review.name || "",
             comment:        review.comment || "",
             like:           review.like || true

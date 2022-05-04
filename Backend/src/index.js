@@ -8,7 +8,7 @@ import DatabaseFactory from "./database.js";
 import RootController from "./controller/root.controller.js";
 import ProductController from "./controller/product.controller.js";
 import ReviewController from "./controller/review.controller.js";
-import Product_reviewController from "./controller/product_review.controller";
+import Product_reviewController from "./controller/product_review.controller.js";
 
 
 // Verzeichnisnamen der Quellcodedatei ermitteln

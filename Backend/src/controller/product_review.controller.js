@@ -16,13 +16,11 @@ export default class Product_reviewController{
         let result = await this._service.readAll(req.query);
         var advancedResult = [];
 
-        for(var i = 0;i <= result.length; i++){
-
-            if(result[i]._id == req.params.id){
+        result.map((review) => {
+            if(review.product_id == req.params.id){
                 advancedResult.push(result[i]);
             }
-
-        }
+        })
 
         res.sendResult(advancedResult);
 
