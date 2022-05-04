@@ -18,7 +18,7 @@ export default class Product_reviewController{
 
         result.map((review) => {
             if(review.product_number == req.params.number){
-                advancedResult.push(result[i]);
+                advancedResult.push(review);
             }
         })
 

@@ -39,7 +39,7 @@ class DatabaseFactory {
         if (await demoProducts.estimatedDocumentCount() === 0) {
             demoProducts.insertMany([
                 {
-                    number: "12345",
+                    number: 12345,
                     name: "Em-eukal Klassisch",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2400_EE_Klassisch_zh_150g__2020.png",
                     like: 125,
@@ -47,7 +47,7 @@ class DatabaseFactory {
                     description: "Unser Klassiker ist berühmt für seine starke Kombination aus Eukalyptusöl und Menthol. Und sorgt so immer und überall für einen besonderen Geschmack, der Wirkung zeigt. Nach dem Originalrezept von Dr. Carl Soldan aus dem Jahr 1923.",
                 },
                 {
-                    number: "12346",
+                    number: 12346,
                     name: "Em-eukal Zitrone",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2420_EE_Zitrone_zfr_75g__2020.png",
                     like: 21,
@@ -55,7 +55,7 @@ class DatabaseFactory {
                     description: "Das spritzige Premiumbonbon mit einer angenehmen Zitronennote, feinen Extrakten aus der Zitronenmelisse und kühlendem Menthol. Für ein herrlich erfrischendes, fruchtiges Geschmackserlebnis.",
                 },
                 {
-                    number: "12347",
+                    number: 12347,
                     name: "Em-eukal Waldkirsche",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2415_EE_Wildkirsche_zfr_75g__2020.png",
                     like: 93,
@@ -63,7 +63,7 @@ class DatabaseFactory {
                     description: "In diesem Premiumbonbon treffen sich hochwertige, natürliche Zutaten. Es vereint den Geschmack von fruchtigen Wildkirschen mit kühlendem Menthol. Und das zeigt Wirkung. Immer und überall!",
                 },
                 {
-                    number: "12348",
+                    number: 12348,
                     name: "Em-eukal Johannisbeere",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2430_EE_Johannisbeere_zfr_75g__2020.png",
                     like: 42,
@@ -71,7 +71,7 @@ class DatabaseFactory {
                     description: "Erfrischung pur: Dieses Premiumbonbon mit dem Geschmack von Schwarzer Johannisbeere schmeckt fruchtig-frisch und überrascht den Gaumen. Das Tüpfelchen auf dem i? Seine köstliche Füllung.",
                 },
                 {
-                    number: "12349",
+                    number: 12349,
                     name: "Em-eukal Salbei",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2450_EE_Salbei_zh_75g__2020.png",
                     like: 12,
@@ -79,7 +79,7 @@ class DatabaseFactory {
                     description: "Aromatisch und kräuterig-frisch umschmeichelt das Salbeibonbon den Gaumen. Jedes einzelne dieser Premiumbonbons enthält feinen Salbeiextrakt und hochwertige ätherische Öle. Lecker wirkt immer!",
                 },
                 {
-                    number: "12350",
+                    number: 12350,
                     name: "Em-eukal Honig",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2445_EE_Honig_gefuellt_zh_75g__2020.png",
                     like: 2,
@@ -87,7 +87,7 @@ class DatabaseFactory {
                     description: "Eine Komposition der Extraklasse: Dieses Premiumbonbon enthält sanften Yucatan-Honig. Und sorgt angenehm mild für einen ganz besonderen Geschmack, der seine Wirkung zeigt.",
                 },
                 {
-                    number: "12351",
+                    number: 12351,
                     name: "Em-eukal Anis-Fenchel",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2455_EE_Anis-Fenchel_zfr_75g__2020.png",
                     like: 9,
@@ -95,7 +95,7 @@ class DatabaseFactory {
                     description: "Eine traditionelle Bonbonspezialität – mit ätherischen Ölen und feinem Anis- und Fenchelextrakt. Die sorgsam ausgewählten Ingredienzien sorgen für einen kräutersanften Geschmack, der seine Wirkung zeigt.",
                 },
                 {
-                    number: "12352",
+                    number: 12352,
                     name: "Em-eukal Milde Minze",
                     picture_url: "https://www.em-eukal.com/wp-content/uploads/sites/2/2437_EE_MildeMinze_zfr_75g__2020.png",
                     like: 98,

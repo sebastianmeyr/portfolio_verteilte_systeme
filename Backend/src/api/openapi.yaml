@@ -240,7 +240,7 @@ components:
         id:
           type: string
         product_number:
-          type: string
+          type: integer
         name:
           type: string
         comment:
