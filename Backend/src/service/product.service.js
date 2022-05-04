@@ -21,6 +21,7 @@ export default class ProductService {
         product = product || {};
 
         let newProduct = {
+            number:         product.number || "",
             name:           product.name || "",
             picture_url:    product.picture_url || "",
             like:           product.like || "",
@@ -49,6 +50,7 @@ export default class ProductService {
 
         let advancedProduct = { $set: {} }
 
+        if (product.number) advancedProduct.$set.number = product.number;
         if (product.name) advancedProduct.$set.name = product.name;
         if (product.picture_url) advancedProduct.$set.picture_url = product.picture_url;
         if (product.like) advancedProduct.$set.like = product.like;

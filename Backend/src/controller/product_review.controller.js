@@ -9,7 +9,7 @@ export default class Product_reviewController{
         this._service = new ReviewService();
         this._prefix = prefix;
 
-        server.get(prefix + "/:id", wrapHandler(this, this.read));
+        server.get(prefix + "/:number", wrapHandler(this, this.read));
     }
 
     async read(req, res, next) {
@@ -17,7 +17,7 @@ export default class Product_reviewController{
         var advancedResult = [];
 
         result.map((review) => {
-            if(review.product_id == req.params.id){
+            if(review.product_number == req.params.number){
                 advancedResult.push(result[i]);
             }
         })

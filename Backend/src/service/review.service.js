@@ -21,7 +21,7 @@ export default class ReviewService {
         review = review || {};
 
         let newReview = {
-            product_id:     review.product_id || "",
+            product_number: review.product_number || "",
             name:           review.name || "",
             comment:        review.comment || "",
             like:           review.like || true
@@ -48,7 +48,7 @@ export default class ReviewService {
 
         let advancedReview = { $set: {} }
 
-        if (review.product_id) advancedReview.$set.product_id = review.product_id;
+        if (review.product_number) advancedReview.$set.product_number = review.product_number;
         if (review.name) advancedReview.$set.name = review.name;
         if (review.comment) advancedReview.$set.comment = review.comment;
         if (review.like) advancedReview.$set.like = review.like;

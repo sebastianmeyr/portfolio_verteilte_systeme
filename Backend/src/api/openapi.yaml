@@ -221,6 +221,8 @@ components:
       properties:
         id:
           type: string
+        number:
+          type: integer
         name:
           type: string
         picture_url:
@@ -237,7 +239,7 @@ components:
       properties:
         id:
           type: string
-        product_id:
+        product_number:
           type: string
         name:
           type: string
