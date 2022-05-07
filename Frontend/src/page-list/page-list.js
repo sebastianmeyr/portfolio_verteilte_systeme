@@ -67,11 +67,7 @@ export default class PageList extends Page {
             olElement.appendChild(liElement);
 
             // Event Handler registrieren
-            //liElement.querySelector(".action-click").addEventListener("click", () => location.hash = `#/${dataset._id}`);
+            liElement.querySelector(".action-click").addEventListener("click", () => location.hash = `#/${dataset._id}`);
         }
-
-        //// TODO: Anzuzeigende Inhalte laden mit this._app.backend.fetch() ////
-        //// TODO: Inhalte in die HTML-Struktur einarbeiten ////
-        //// TODO: Neue Methoden für Event Handler anlegen und hier registrieren ////
     }
 };
