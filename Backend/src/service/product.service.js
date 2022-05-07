@@ -40,6 +40,7 @@ export default class ProductService {
         let result = await this._products.findOne({_id: new ObjectId(id)});
 
         return result;
+        
     }
 
     //Bearbeiten eines bestimmten Produkts
