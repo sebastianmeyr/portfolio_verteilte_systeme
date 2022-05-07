@@ -1,11 +1,22 @@
 <style>
-
+    .entry-div{
+        display: flex;
+        flex-direction: row;
+    }
 </style>
 
 <main>
-    <div>
-        <img src="$PICTURE_URL$">
+    <div class="product-div">
+        <div>
+            <img src="$PICTURE_URL$">
+        </div>
+        <div class="info-div">
+            <h3>$NAME$</h3>
+            <p>Likes: $LIKE$</p>
+            <p>Dislikes: $DISLIKE$</p>
+        </div>
     </div>
+
     <div class="product-description">
         <h3>Produktdetails:</h3>
         <p>$DESCRIPTION$</p>

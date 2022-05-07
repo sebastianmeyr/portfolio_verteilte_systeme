@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Implemented product_number">
-      <change afterPath="$PROJECT_DIR$/Frontend/src/page-details/page-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/page-details/page-details.js" afterDir="false" />
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Started DetailPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/page-details/page-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-details/page-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651687754723</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Started DetailPage">
+      <created>1651921472194</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651921472194</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +174,7 @@
     <MESSAGE value="Fixed bugs" />
     <MESSAGE value="Implemented ProductReviewController" />
     <MESSAGE value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
+    <MESSAGE value="Started DetailPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started DetailPage" />
   </component>
 </project>
