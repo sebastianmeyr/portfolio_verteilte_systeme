@@ -21,13 +21,15 @@ class App {
         this.backend = new Backend();
 
         // Single Page Router zur Steuerung der sichtbaren Inhalte
-        //// TODO: Routing-Regeln anpassen und ggf. neue Methoden anlegen ////
         this.router = new Router([
             {
                 url: "^/$",
                 show: () => this._gotoList()
             },
-            //// TODO: Eigene Routing-Regeln hier in der Mitte einfügen ////
+            {
+                url: "^/(.*)$",
+                show: matches => this._gotoDetails(matches[1]),
+            },
             {
                 url: ".*",
                 show: () => this._gotoList()
@@ -69,6 +71,18 @@ class App {
             let page = new PageList(this);
             await page.init();
             this._showPage(page, "list");
+        } catch (ex) {
+            this.showException(ex);
+        }
+    }
+
+    async _gotoDetails(productId) {
+        try {
+            let {default: PageDetails} = await import("./page-details/page-details.js");
+
+            let page = new PageDetails(this, productId);
+            await page.init();
+            this._showPage(page, "details");
         } catch (ex) {
             this.showException(ex);
         }
