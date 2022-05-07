@@ -5,10 +5,12 @@
         width: 100%;
     }
 
-    .empty-div {
+    .entry-div {
         display: flex;
         flex-direction: row;
         width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
 
     img {
@@ -19,6 +21,11 @@
     ul {
         list-style-type:none;
         padding: 0;
+    }
+
+    .review-image {
+        width: 100px;
+        height: 100px;
     }
 </style> 
 
@@ -54,9 +61,10 @@
                     <p>$COMMENT$</p>
                 </div>
                 <div>
-                    <img src="$PICTURE_URL$">
+                    <img class="review-image" src="$PICTURE_URL$">
                 </div>
             </div>
+            <hr>
         </li>
     </ul>
 </main>
