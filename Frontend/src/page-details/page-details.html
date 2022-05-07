@@ -32,6 +32,15 @@
         text-decoration: none;
         color: black;
     }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        padding-bottom: 2px;
+    }
 </style> 
 
 <main>
@@ -53,8 +62,25 @@
 
     <hr>
 
+    <div class="form">
+        <h3>Kommentar hinzufügen</h3>
+        <input class="name" placeholder="Dein Name"/>
+        <input class="comment" placeholder="Gerne kannst du einen Kommentar hinterlassen;)"/>
+        <div>
+            <input type="radio" id="like" name="rating" class="likes" value="like" checked="checked"/>
+            <label for="like">Like? 💚</label>
+        </div>
+        <div>
+            <input type="radio" id="dislike" name="rating" class="likes" value="dislike" />
+            <label for="dislike">Dislike!? 🍌</label>
+        </div>
+        <button class="action-submit">Ab geht die Post!</button>
+    </div>
+    
+    <hr>
+
     <ul>
-        <h3>Bewertung</h3>
+        <h3>Bewertungen</h3>
         <li class="empty-placeholder">
             <div class="name">
                 <p>Zu diesem Produkt gibt es leider noch keine Bewertung. :( </p>
@@ -64,7 +90,7 @@
         <li class="list-entry" data-id="$ID$">
             <div class="entry-div">
                 <div>
-                    <h3>$NAME$</h3>
+                    <h4>$NAME$</h4>
                     <p>$COMMENT$</p>
                 </div>
                 <div>
