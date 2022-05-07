@@ -76,13 +76,45 @@ export default class PageDetails extends Page {
             let liElement = dummyElement.firstElementChild;
             liElement.remove();
             ulElement.appendChild(liElement);
-
-            // Event Handler registrieren
-            //liElement.querySelector(".action-click").addEventListener("click", () => location.hash = `#/${dataset._id}`);
         }
 
-        //// TODO: Anzuzeigende Inhalte laden mit this._app.backend.fetch() ////
-        //// TODO: Inhalte in die HTML-Struktur einarbeiten ////
-        //// TODO: Neue Methoden für Event Handler anlegen und hier registrieren ////
+        let submitButton = this._mainElement.querySelector(".action-submit");
+        submitButton.addEventListener("click", () => this._submitReview());
+
+        this._nameInput = this._mainElement.querySelector("input.name");
+        this._commentInput = this._mainElement.querySelector("input.comment");
+        this._likeInput = this._mainElement.querySelector('input[name="rating"]:checked');
+    }
+
+    async _submitReview() {
+        let newReview = {
+            product_number: this._dataset.number,
+            name: null,
+            comment: null,
+            like: true
+        }
+
+        newReview.name = this._nameInput.value.trim();
+        newReview.comment = this._commentInput.value.trim();
+        newReview.like = this._mainElement.querySelector('input[name="rating"]:checked').value == "like";
+
+        if(!newReview.name) {
+            alert("Gebe einen Namen ein! >:(");
+            return;
+        }
+
+        if(!newReview.comment) {
+            alert("Gebe eine Bewertung ein! >:(");
+            return;
+        }
+
+        try {
+            await this._app.backend.fetch("POST", "/reviews", {body: newReview});
+        } catch (ex) {
+            this._app.showException(ex);
+            return;
+        }
+
+        location.hash = "#/" + this._productId;
     }
 };
