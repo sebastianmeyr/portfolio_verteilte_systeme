@@ -1,15 +1,30 @@
 <style>
-    .entry-div .product-div {
+    .product-div {
         display: flex;
         flex-direction: row;
+        width: 100%;
     }
-</style>
+
+    .empty-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    ul {
+        list-style-type:none;
+        padding: 0;
+    }
+</style> 
 
 <main>
     <div class="product-div">
-        <div>
-            <img src="$PICTURE_URL$">
-        </div>
+        <img src="$PICTURE_URL$">
         <div class="info-div">
             <h3>$NAME$</h3>
             <p>Likes: $LIKE$</p>
@@ -18,15 +33,18 @@
     </div>
 
     <div class="product-description">
-        <h3>Produktdetails:</h3>
+        <h3>Produktdetails</h3>
         <p>$DESCRIPTION$</p>
     </div>
+
+    <hr>
+
     <ul>
         <h3>Bewertung</h3>
         <li class="empty-placeholder">
             <div class="name">
                 <p>Zu diesem Produkt gibt es leider noch keine Bewertung. :( </p>
-                <p> Zeit das zu ändrn, hau in deine Tasten!</p>
+                <p> Zeit das zu ändern, hau in deine Tasten!</p>
             </div>
         </li>
         <li class="list-entry" data-id="$ID$">
