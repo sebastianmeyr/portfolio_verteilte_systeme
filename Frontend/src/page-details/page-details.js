@@ -81,6 +81,12 @@ export default class PageDetails extends Page {
         let submitButton = this._mainElement.querySelector(".action-submit");
         submitButton.addEventListener("click", () => this._submitReview());
 
+        let likeButton = this._mainElement.querySelector(".action-like");
+        likeButton.addEventListener("click", () => this._updateLikes(true));
+
+        let dislikeButton = this._mainElement.querySelector(".action-dislike");
+        dislikeButton.addEventListener("click", () => this._updateLikes(false));
+
         this._nameInput = this._mainElement.querySelector("input.name");
         this._commentInput = this._mainElement.querySelector("input.comment");
         this._likeInput = this._mainElement.querySelector('input[name="rating"]:checked');
