@@ -62,7 +62,7 @@ export default class PageDetails extends Page {
             html = html.replace("$NAME$", review.name);
 
             let pictureUrl;
-            if (review.like)
+            if (review.like == "like")
                 pictureUrl = "https://previews.123rf.com/images/mutlik/mutlik1808/mutlik180800021/112002464-cartoon-wie-daumen-hoch-im-comic-stil-vektor-illustration-.jpg";
             else
                 pictureUrl = "https://previews.123rf.com/images/triken/triken1608/triken160800024/61320639-dislike-smileyemoticon-unterzeichnen-vektor-illustration-auf-wei%C3%9Fem-hintergrund-.jpg";
@@ -96,7 +96,7 @@ export default class PageDetails extends Page {
 
         newReview.name = this._nameInput.value.trim();
         newReview.comment = this._commentInput.value.trim();
-        newReview.like = this._mainElement.querySelector('input[name="rating"]:checked').value == "like";
+        newReview.like = this._mainElement.querySelector('input[name="rating"]:checked').value;
 
         if(!newReview.name) {
             alert("Gebe einen Namen ein! >:(");
@@ -115,6 +115,6 @@ export default class PageDetails extends Page {
             return;
         }
 
-        location.hash = "#/" + this._productId;
+        window.location.reload();
     }
 };

@@ -246,5 +246,5 @@ components:
         comment:
           type: string
         like:
-          type: boolean
+          type: string
   securitySchemes: {}
