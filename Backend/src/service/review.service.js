@@ -22,9 +22,9 @@ export default class ReviewService {
 
         let newReview = {
             product_number: review.product_number || "",
-            name:           review.name || "",
-            comment:        review.comment || "",
-            like:           review.like || true
+            name:           review.name           || "",
+            comment:        review.comment        || "",
+            like:           review.like           || "",
         };
 
         let result = await this._reviews.insertOne(newReview);
