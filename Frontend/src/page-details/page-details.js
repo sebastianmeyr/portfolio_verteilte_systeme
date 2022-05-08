@@ -98,6 +98,8 @@ export default class PageDetails extends Page {
         newReview.comment = this._commentInput.value.trim();
         newReview.like = this._mainElement.querySelector('input[name="rating"]:checked').value;
 
+        this._updateLikes(this._mainElement.querySelector('input[name="rating"]:checked').value == "like");
+
         if(!newReview.name) {
             alert("Gebe einen Namen ein! >:(");
             return;
@@ -110,6 +112,22 @@ export default class PageDetails extends Page {
 
         try {
             await this._app.backend.fetch("POST", "/reviews", {body: newReview});
+        } catch (ex) {
+            this._app.showException(ex);
+            return;
+        }
+
+        window.location.reload();
+    }
+
+    async _updateLikes(likeQuestionmark) {
+        if (likeQuestionmark)
+            this._dataset.like++;
+        else
+            this._dataset.dislike++;
+
+        try {
+            await this._app.backend.fetch("PATCH", "/products/" + this._productId, {body: this._dataset});
         } catch (ex) {
             this._app.showException(ex);
             return;
