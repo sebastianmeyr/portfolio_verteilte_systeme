@@ -5,6 +5,8 @@ import ProductService from "../service/product.service.js";
 import RestifyError from "restify-errors";
 
 export default class ProductController {
+
+    //Konstruktor
     constructor(server, prefix) {
         this._service = new ProductService();
         this._prefix = prefix;
@@ -33,7 +35,6 @@ export default class ProductController {
         let result = await this._service.create(req.body);
 
         res.status(201);
-
         res.sendResult(result);
 
         return next();
@@ -43,11 +44,10 @@ export default class ProductController {
     async read(req, res, next) {
         let result = await this._service.read(req.params.id);
 
-        if (result) {
+        if (result)
             res.sendResult(result);
-        } else {
+        else
             throw new RestifyError.NotFoundError("Produkt nicht gefunden.");
-        }
 
         return next();
     }
@@ -56,11 +56,10 @@ export default class ProductController {
     async update(req, res, next) {
         let result = await this._service.update(req.params.id, req.body);
 
-        if(result) {
+        if(result)
             res.sendResult(result);
-        } else {
+        else
             throw new RestifyError.NotFoundError("Produkt nicht gefunden");
-        }
 
         return next();
     }
@@ -69,11 +68,10 @@ export default class ProductController {
     async delete(req, res, next) {
         let result = await this._service.delete(req.params.id)
 
-        if(result){
+        if(result)
             res.status(200);
-        }else{
+        else
             throw new RestifyError.NotFoundError("Es wurde kein Eintrag gelöscht");
-        }
 
         res.sendResult({});
 

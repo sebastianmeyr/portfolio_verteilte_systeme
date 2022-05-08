@@ -5,6 +5,8 @@ import ReviewService from "../service/review.service.js";
 import RestifyError from "restify-errors";
 
 export default class ReviewController {
+    
+    //Konstruktor
     constructor(server, prefix) {
         this._service = new ReviewService();
         this._prefix = prefix;
@@ -23,6 +25,7 @@ export default class ReviewController {
     //GET /reviews
     async readAll(req, res, next) {
         let result = await this._service.readAll(req.query);
+        
         res.sendResult(result);
 
         return next();
@@ -33,7 +36,6 @@ export default class ReviewController {
         let result = await this._service.create(req.body);
 
         res.status(201);
-
         res.sendResult(result);
 
         return next();
@@ -43,11 +45,10 @@ export default class ReviewController {
     async read(req, res, next) {
         let result = await this._service.read(req.params.id);
 
-        if (result) {
+        if (result)
             res.sendResult(result);
-        } else {
+        else
             throw new RestifyError.NotFoundError("Produktbewertung nicht gefunden.");
-        }
 
         return next();
     }
@@ -56,11 +57,10 @@ export default class ReviewController {
     async update(req, res, next) {
         let result = await this._service.update(req.params.id, req.body);
 
-        if(result) {
+        if(result)
             res.sendResult(result);
-        } else {
+        else
             throw new RestifyError.NotFoundError("Produktbewertung nicht gefunden");
-        }
 
         return next();
     }
@@ -69,11 +69,10 @@ export default class ReviewController {
     async delete(req, res, next) {
         let result = await this._service.delete(req.params.id)
 
-        if(result){
+        if(result)
             res.status(200);
-        }else{
+        else
             throw new RestifyError.NotFoundError("Es wurde kein Eintrag gelöscht");
-        }
 
         res.sendResult({});
 

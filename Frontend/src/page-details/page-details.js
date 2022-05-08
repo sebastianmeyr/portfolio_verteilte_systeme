@@ -3,15 +3,9 @@
 import Page from "../page.js";
 import HtmlTemplate from "./page-details.html";
 
-/**
- * Klasse PageList: Stellt die Listenübersicht zur Verfügung
- */
+
 export default class PageDetails extends Page {
-    /**
-     * Konstruktor.
-     *
-     * @param {App} app Instanz der App-Klasse
-     */
+    //Konstruktor
     constructor(app, productId) {
         super(app, HtmlTemplate);
 
@@ -21,7 +15,6 @@ export default class PageDetails extends Page {
     }
 
     async init() {
-        // HTML-Inhalt nachladen
         await super.init();
         console.log(this._productId)
 
@@ -31,6 +24,7 @@ export default class PageDetails extends Page {
             this._title = this._dataset.name + " - Details";
         }
 
+        //Platzhalter mit Daten aus DB ersetzen
         let html = this.mainElement.innerHTML; 
         html = html.replace("$NAME$", this._dataset.name);
         html = html.replace("$LIKE$", this._dataset.like);
@@ -39,7 +33,7 @@ export default class PageDetails extends Page {
         html = html.replace("$PICTURE_URL$", this._dataset.picture_url);
         this._mainElement.innerHTML = html;
 
-              
+        //Produktbewertungen zu diesem Produkt laden
         let reviews = await this._app.backend.fetch("GET", "/productReviews/" + this._dataset.number);
         this._emptyMessageElement = this._mainElement.querySelector(".empty-placeholder");
 
@@ -47,7 +41,7 @@ export default class PageDetails extends Page {
             this._emptyMessageElement.classList.add("hidden");
         }
 
-        // Je Datensatz einen Li der Produktbewertungensteneintrag generieren
+        //Je Produktbewertung einen Listeneintrag erstellen
         let ulElement = this._mainElement.querySelector("ul");
 
         let templateElement = this._mainElement.querySelector(".list-entry");
@@ -78,6 +72,7 @@ export default class PageDetails extends Page {
             ulElement.appendChild(liElement);
         }
 
+        //Listener für Buttons
         let submitButton = this._mainElement.querySelector(".action-submit");
         submitButton.addEventListener("click", () => this._submitReview());
 
@@ -87,11 +82,13 @@ export default class PageDetails extends Page {
         let dislikeButton = this._mainElement.querySelector(".action-dislike");
         dislikeButton.addEventListener("click", () => this._updateLikes(false));
 
+        //Eingabefelder für neue Bewertungen
         this._nameInput = this._mainElement.querySelector("input.name");
         this._commentInput = this._mainElement.querySelector("input.comment");
         this._likeInput = this._mainElement.querySelector('input[name="rating"]:checked');
     }
 
+    //Methode zum erstellen einer neuen Produktbewertung
     async _submitReview() {
         let newReview = {
             product_number: this._dataset.number,
@@ -126,6 +123,7 @@ export default class PageDetails extends Page {
         window.location.reload();
     }
 
+    // Mehtode um die Anzahl der Likes bzw. Dislikes upzudaten
     async _updateLikes(likeQuestionmark) {
         if (likeQuestionmark)
             this._dataset.like++;
