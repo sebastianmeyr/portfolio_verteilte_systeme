@@ -1,0 +1,68 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d40a82d9-12a4-419a-8290-5bb2f936a409\" name=\"Changes\" comment=\"Adjusted app.css\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Frontend/src/app.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Frontend/src/app.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Frontend/src/page-list/page-list.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Frontend/src/page-list/page-list.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Frontend/src/page-list/page-list.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Frontend/src/page-list/page-list.js\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/Backend/src/controller/product.controller.js\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\n  </component>\n  <component name=\"ProjectId\" id=\"25vObRwGUntcJHwF1IjhVS0e8Ea\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <OptionsSetting value=\"false\" id=\"Update\" />\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"RunManager\">\n    <configuration default=\"true\" type=\"SwaggerCodegen\">\n      <option name=\"activeConfigurationType\" value=\"FILE\" />\n      <option name=\"configurationPath\" value=\"\" />\n      <option name=\"customJreEnabled\" value=\"false\" />\n      <option name=\"customTemplatesPath\" value=\"\" />\n      <option name=\"enableDebugLogging\" value=\"false\" />\n      <option name=\"generateToPath\" value=\"$PROJECT_DIR$/gen\" />\n      <option name=\"generationParameters\">\n        <list />\n      </option>\n      <option name=\"generatorPath\" value=\"https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar\" />\n      <option name=\"jdkPath\" value=\"\" />\n      <option name=\"language\" value=\"java\" />\n      <option name=\"specificationPath\" value=\"$PROJECT_DIR$/Backend/src/api/openapi.yaml\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"d40a82d9-12a4-419a-8290-5bb2f936a409\" name=\"Changes\" comment=\"\" />\n      <created>1646404167918</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1646404167918</updated>\n      <workItem from=\"1646404170347\" duration=\"13000\" />\n      <workItem from=\"1646407476145\" duration=\"133000\" />\n      <workItem from=\"1646407625097\" duration=\"36000\" />\n      <workItem from=\"1647616025702\" duration=\"279000\" />\n      <workItem from=\"1647776858811\" duration=\"169000\" />\n      <workItem from=\"1648036385094\" duration=\"137000\" />\n      <workItem from=\"1649159215692\" duration=\"6246000\" />\n      <workItem from=\"1651504222050\" duration=\"8155000\" />\n      <workItem from=\"1651678518932\" duration=\"3901000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Added template project\">\n      <created>1647616227893</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647616227893</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Updated openapi.yaml\">\n      <created>1649159509089</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1649159509089</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Dummy-Data; Changed Console-Output\">\n      <created>1651508964525</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651508964525</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Expanded ProductController\">\n      <created>1651511156384</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651511156384</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Implemented ProductService\">\n      <created>1651512623498</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651512623498</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Fixed bugs\">\n      <created>1651594205245</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651594205245</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Implemented ProductReviewController\">\n      <created>1651680834580</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651680834580</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml \uD83E\uDD2E\">\n      <created>1651687754723</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651687754723</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Fixes product_review.controller.js, openapi.yaml\">\n      <created>1651690527660</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651690527660</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Adjusted app.css\">\n      <created>1651692415286</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651692415286</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"11\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Added template project\" />\n    <MESSAGE value=\"Updated openapi.yaml\" />\n    <MESSAGE value=\"Dummy-Data; Changed Console-Output\" />\n    <MESSAGE value=\"Expanded ProductController\" />\n    <MESSAGE value=\"Implemented ProductService\" />\n    <MESSAGE value=\"Fixed bugs\" />\n    <MESSAGE value=\"Implemented ProductReviewController\" />\n    <MESSAGE value=\"Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml \" />\n    <MESSAGE value=\"Fixes product_review.controller.js, openapi.yaml\" />\n    <MESSAGE value=\"Adjusted app.css\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Adjusted app.css\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 12b72e0ea34a28ff5833299cadcd55de9099fa94)
++++ b/.idea/workspace.xml	(date 1651925903130)
+@@ -1,11 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Adjusted app.css">
++    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Designed page-list.html">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Frontend/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -39,6 +36,10 @@
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="vue.rearranger.settings.migration" value="true" />
+   </component>
+   <component name="RunManager">
+     <configuration default="true" type="SwaggerCodegen">
+@@ -75,6 +76,7 @@
+       <workItem from="1649159215692" duration="6246000" />
+       <workItem from="1651504222050" duration="8155000" />
+       <workItem from="1651678518932" duration="3901000" />
++      <workItem from="1651920932190" duration="1275000" />
+     </task>
+     <task id="LOCAL-00001" summary="Added template project">
+       <created>1647616227893</created>
+@@ -146,7 +148,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1651692415286</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="Designed page-list.html">
++      <created>1651694404154</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1651694404154</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -175,6 +184,7 @@
+     <MESSAGE value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
+     <MESSAGE value="Fixes product_review.controller.js, openapi.yaml" />
+     <MESSAGE value="Adjusted app.css" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted app.css" />
++    <MESSAGE value="Designed page-list.html" />
++    <option name="LAST_COMMIT_MESSAGE" value="Designed page-list.html" />
+   </component>
+ </project>
+\ No newline at end of file

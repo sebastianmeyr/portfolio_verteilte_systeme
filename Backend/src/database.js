@@ -111,25 +111,73 @@ class DatabaseFactory {
                     product_number: 12345,
                     name: "Ursula123",
                     comment: "Hallo liebe Em-eukal Liebhaber!!! Das klassische Em-eukal ist einfach das beste! <3 Ich habe es vergangenen Mittwoch meinem lieben Enkel Ferdinand gekauft. Sehr erfreut war der Bub!! <3 Ich trage seit dem immer mindestens eine Packung Em-eukal-Klassisch in meiner selbstgestrickten Handtasche!! Liebste Grüße aus der Südpfalz, eure Ursula und Manfred.",
-                    like: true
+                    like: "like"
+                },
+                {
+                    product_number: 12346,
+                    name: "Herbert",
+                    comment: "Zu sauer!",
+                    like: "dislike"
                 },
                 {
                     product_number: 12345,
-                    name: "asdasd",
-                    comment: "asdasd",
-                    like: true
+                    name: "Schnitzel Olaf",
+                    comment: "Astrein!!!",
+                    like: "like"
                 },
                 {
-                    product_number: 12345,
-                    name: "haksdhja",
-                    comment: "haksdhjlkal",
-                    like: true
+                    product_number: 12346,
+                    name: "Thomas Meier",
+                    comment: "Em-eukal Zitrone eignet sich nicht nur als Snack zwischendurch, sondern auch perfekt als Abfürmittel! Ich habe eine halbe Packung gegessen uns fühle mich 10kg leichter!! 😮‍💨",
+                    like: "dislike"
                 },
                 {
-                    product_number: 12345,
-                    name: "lkajlsjdl",
-                    comment: "alksdl",
-                    like: true
+                    product_number: 12347,
+                    name: "Anna Müller",
+                    comment: "Ich liebe das Em-Eukal. Ich esse täglich eine Packung.",
+                    like: "like"
+                },
+                {
+                    product_number: 12349,
+                    name: "Fabian Vogel",
+                    comment: "Ich habe gestern eine Pakcung gegessen und habe dann die ganze Nacht auf der Toilette verbracht. Die Warnung, dass es abführend wirken kann bei zu hohem Kosum, war zu klein gedruckt :(",
+                    like: "dislike"
+                },
+                {
+                    product_number: 12347,
+                    name: "Christian B.",
+                    comment: "Die Warnung bezüglich der abführenden Wirkung muss auf jeden Fall größer sein!! Spreche da aus eigener Erfahrung!!!",
+                    like: "dislike"
+                },
+                {
+                    product_number: 12352,
+                    name: "emEukalLover123XOXO",
+                    comment: "Als großer Em-Eukal Fan muss ich sagen, dass diese Sorte meine Lieblingssorte ist. Sehr erfrischend",
+                    like: "like"
+                },
+                {
+                    product_number: 12350,
+                    name: "Chris P. Bacon",
+                    comment: "Good stuff!",
+                    like: "like"
+                },
+                {
+                    product_number: 12351,
+                    name: "Marc Maerdian",
+                    comment: "Niemand hat mir die Hausaufgaben geschickt, deshalb habe ich aus Frust eine ganze Packung gegessen. War lecker;)",
+                    like: "like"
+                },
+                {
+                    product_number: 12352,
+                    name: "Prof. Dr. Hans Ulrich Ziegenbauer",
+                    comment: "Hallo liebes em-eukal-Team, danke für den schnellen Versand meiner Bestellung. Meine Frau und ich haben uns sehr über die Lieferung gefreut. Leider mussten wir feststellen, dass die milde Minze uns doch entwas zu mild ist... Schade...",
+                    like: "dislike"
+                },
+                {
+                    product_number: 12348,
+                    name: "Lisa Müller ",
+                    comment: "Sehr lecker. Schmeckt wie frisch aus dem Wald gepflückte Johannisbeeren",
+                    like: "like"
                 },
             ])
         }

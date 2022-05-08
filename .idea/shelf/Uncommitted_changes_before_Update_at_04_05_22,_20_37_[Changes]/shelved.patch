@@ -1,0 +1,259 @@
+Index: Backend/src/api/openapi.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>openapi: 3.0.0\ninfo:\n  title: em-Eukal-App\n  version: '1.0'\n  description: 'Diese API dient der Em-Eukal Produktbewertungsapp und bietet Endpunkte zum Erstellen, Löschen und Bearbeiten von Produkteinträgen und dazugehöriger Bewertungen. '\n  contact:\n    name: Pfängerle und Meyrle AG\n    email: support@PuMAG.com\n    url: PuMAG.com\nservers:\n  - url: 'http://localhost:3000'\n    description: Julia Pfanger\npaths:\n  /products:\n    get:\n      summary: Your GET endpoint\n      tags: []\n      responses:\n        '200':\n          description: OK\n          content:\n            application/json:\n              schema:\n                type: array\n                items:\n                  $ref: '#/components/schemas/Product'\n      operationId: get-products\n      description: Liefert alle Produkteinträge\n    post:\n      summary: ''\n      operationId: post-products\n      responses:\n        \"201\":\n          description: Created\n          headers:\n            Location:\n              schema:\n                type: string\n      description: Erstellt neuen Produkteintrag\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Product'\n        description: ''\n  '/products/{id}':\n    parameters:\n      - schema:\n          type: string\n        name: id\n        in: path\n        required: true\n    get:\n      summary: Your GET endpoint\n      tags: []\n      responses:\n        '200':\n          description: OK\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/Product'\n        '404':\n          description: Not Found\n      operationId: get-products-id\n      description: Liefert Produkteintrag mit dieser ID\n    put:\n      summary: ''\n      operationId: put-products-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Aktualisiert einen Produkteintrag\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Product'\n    patch:\n      summary: ''\n      operationId: patch-products-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Aktualisiert einzelne Werte des Produkteintrages\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Product'\n        description: ''\n    delete:\n      summary: ''\n      operationId: delete-products-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Löscht Produkteintrag\n  /reviews:\n    get:\n      summary: Your GET endpoint\n      tags: []\n      responses:\n        '200':\n          description: OK\n          content:\n            application/json:\n              schema:\n                type: array\n                items:\n                  $ref: '#/components/schemas/Review'\n      operationId: get-reviews\n      description: Liefert Produktbewertungen\n    post:\n      summary: ''\n      operationId: post-reviews\n      responses:\n        '201':\n          description: Created\n          headers:\n            Location:\n              schema:\n                type: string\n      description: Erstellt neue Produktbewertung\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Review'\n        description: ''\n  '/reviews/{id}':\n    parameters:\n      - schema:\n          type: string\n        name: id\n        in: path\n        required: true\n    get:\n      summary: Your GET endpoint\n      tags: [ ]\n      responses:\n        '200':\n          description: OK\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/Review'\n        '404':\n          description: Not Found\n      operationId: get-reviews-id\n      description: Liefert einzelne Produktbewertung\n    put:\n      summary: ''\n      operationId: put-reviews-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Aktualisiert eine Produktbewertung\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Review'\n    patch:\n      summary: ''\n      operationId: patch-reviews-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Aktualisiert einzelne Werte einer Produktbewertung\n      requestBody:\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/Review'\n    delete:\n      summary: ''\n      operationId: delete-reviews-id\n      responses:\n        '200':\n          description: OK\n        '404':\n          description: Not Found\n      description: Löscht einzelne Produktbewertung\n  '/productReviews/{id}':\n    parameters:\n      - schema:\n          type: string\n        name: id\n        in: path\n        required: true\n    get:\n      summary: Your GET endpoint\n      tags: []\n      responses:\n        '200':\n          description: OK\n          content:\n            application/json:\n              schema:\n                type: object\n                properties:\n                  '':\n                    type: array\n                    items:\n                      $ref: '#/components/schemas/Review'\n      operationId: get-productReviews-id\n      description: Liefert Produktbewertungen zum Produkt der angegebenen ID\ncomponents:\n  schemas:\n    Product:\n      title: Product\n      type: object\n      properties:\n        id:\n          type: integer\n        name:\n          type: string\n        picture_url:\n          type: string\n        like:\n          type: integer\n        dislike:\n          type: integer\n        description:\n          type: string\n    Review:\n      title: Review\n      type: object\n      properties:\n        id:\n          type: integer\n        product_id:\n          type: integer\n        name:\n          type: string\n        comment:\n          type: string\n        like:\n          type: boolean\n  securitySchemes: {}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Backend/src/api/openapi.yaml b/Backend/src/api/openapi.yaml
+--- a/Backend/src/api/openapi.yaml	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/Backend/src/api/openapi.yaml	(date 1651685972762)
+@@ -208,12 +208,9 @@
+           content:
+             application/json:
+               schema:
+-                type: object
+-                properties:
+-                  '':
+-                    type: array
+-                    items:
+-                      $ref: '#/components/schemas/Review'
++                type: array
++                items:
++                  $ref: '#/components/schemas/Review'
+       operationId: get-productReviews-id
+       description: Liefert Produktbewertungen zum Produkt der angegebenen ID
+ components:
+@@ -223,7 +220,7 @@
+       type: object
+       properties:
+         id:
+-          type: integer
++          type: string
+         name:
+           type: string
+         picture_url:
+@@ -239,9 +236,9 @@
+       type: object
+       properties:
+         id:
+-          type: integer
++          type: string
+         product_id:
+-          type: integer
++          type: string
+         name:
+           type: string
+         comment:
+Index: Backend/src/service/review.service.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\"\n\nimport DatabaseFactory from \"../database.js\";\nimport {ObjectId} from \"mongodb\";\n\nexport default class ReviewService {\n\n    constructor() {\n        this._reviews = DatabaseFactory.database.collection(\"reviews\");\n    }\n\n    //Alle Produktebewertungen auslesen\n    async readAll(query) {\n        let cursor = this._reviews.find(query, {});\n\n        return cursor.toArray();\n    }\n\n    //Neue Produktbewertung hinzufügen\n    async create(review) {\n        review = review || {};\n\n        let newReview = {\n            product_id:     review.product_id || 0,\n            name:           review.name || \"\",\n            comment:        review.comment || \"\",\n            like:           review.like || true\n        };\n\n        let result = await this._reviews.insertOne(newReview);\n\n        return await this._reviews.findOne({_id: result.insertedId});\n    }\n\n\n    //Bestimmte Produktbewertung auslesen\n    async read(id) {\n        let result = await this._reviews.findOne({_id: new ObjectId(id)});\n\n        return result;\n    }\n\n    //Bearbeiten einer bestimmten Produktbewertung\n    async update(id, review) {\n        let antiqueReview = await this._reviews.findOne({_id: new ObjectId(id)});\n\n        if(!antiqueReview) return;\n\n        let advancedReview = { $set: {} }\n\n        if (review.product_id) advancedReview.$set.product_id = review.product_id;\n        if (review.name) advancedReview.$set.name = review.name;\n        if (review.comment) advancedReview.$set.comment = review.comment;\n        if (review.like) advancedReview.$set.like = review.like;\n\n        await this._reviews.updateOne({_id: new ObjectId(id)}, advancedReview);\n        return this._reviews.findOne({_id: new ObjectId(id)});\n    }\n\n    //Löschen einer bestimmten Produktbewertung\n    async delete(id) {\n        let result = await this._reviews.deleteOne({_id: new ObjectId(id)});\n        return result.deletedCount;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Backend/src/service/review.service.js b/Backend/src/service/review.service.js
+--- a/Backend/src/service/review.service.js	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/Backend/src/service/review.service.js	(date 1651683541829)
+@@ -21,7 +21,7 @@
+         review = review || {};
+ 
+         let newReview = {
+-            product_id:     review.product_id || 0,
++            product_id:     review.product_id || "",
+             name:           review.name || "",
+             comment:        review.comment || "",
+             like:           review.like || true
+Index: Backend/src/database.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\"\n\nimport { MongoClient } from \"mongodb\";\n\n/**\n * Singleton-Klasse zum Zugriff auf das MongoDB-Datenbankobjekt, ohne dieses\n * ständig als Methodenparameter durchreichen zu müssen. Stattdessen kann\n * einfach das Singleton-Objekt dieser Klasse importiert und das Attribut\n * `mongodb` oder `database` ausgelesen werden.\n */\nclass DatabaseFactory {\n    /**\n     * Ersatz für den Konstruktor, damit aus dem Hauptprogramm heraus die\n     * Verbindungs-URL der MongoDB übergeben werden kann. Hier wird dann\n     * auch gleich die Verbindung hergestellt.\n     *\n     * @param {String} connectionUrl URL-String mit den Verbindungsdaten\n     */\n    async init(connectionUrl) {\n        // Datenbankverbindung herstellen\n        this.client = new MongoClient(connectionUrl);\n        await this.client.connect();\n        this.database = this.client.db(\"app_database\");\n\n        await this._createDemoData();\n    }\n\n    /**\n     * Hilfsmethode zum Anlagen von Demodaten. Würde man so in einer\n     * Produktivanwendung natürlich nicht machen, aber so sehen wir\n     * wenigstens gleich ein paar Daten.\n     */\n    async _createDemoData() {\n        //// TODO: Methode anpassen, um zur eigenen App passende Demodaten anzulegen ////\n        //// oder die Methode ggf. einfach löschen und ihren Aufruf oben entfernen.  ////\n        let demoProducts = this.database.collection(\"products\");\n        let demoReviews = this.database.collection(\"reviews\");\n\n        if (await demoProducts.estimatedDocumentCount() === 0) {\n            demoProducts.insertMany([\n                {\n                    name: \"Em-eukal Klassisch\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2400_EE_Klassisch_zh_150g__2020.png\",\n                    like: 125,\n                    dislike: 3,\n                    description: \"Unser Klassiker ist berühmt für seine starke Kombination aus Eukalyptusöl und Menthol. Und sorgt so immer und überall für einen besonderen Geschmack, der Wirkung zeigt. Nach dem Originalrezept von Dr. Carl Soldan aus dem Jahr 1923.\",\n                },\n                {\n                    name: \"Em-eukal Zitrone\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2420_EE_Zitrone_zfr_75g__2020.png\",\n                    like: 21,\n                    dislike: 75,\n                    description: \"Das spritzige Premiumbonbon mit einer angenehmen Zitronennote, feinen Extrakten aus der Zitronenmelisse und kühlendem Menthol. Für ein herrlich erfrischendes, fruchtiges Geschmackserlebnis.\",\n                },\n                {\n                    name: \"Em-eukal Waldkirsche\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2415_EE_Wildkirsche_zfr_75g__2020.png\",\n                    like: 93,\n                    dislike: 7,\n                    description: \"In diesem Premiumbonbon treffen sich hochwertige, natürliche Zutaten. Es vereint den Geschmack von fruchtigen Wildkirschen mit kühlendem Menthol. Und das zeigt Wirkung. Immer und überall!\",\n                },\n                {\n                    name: \"Em-eukal Johannisbeere\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2430_EE_Johannisbeere_zfr_75g__2020.png\",\n                    like: 42,\n                    dislike: 12,\n                    description: \"Erfrischung pur: Dieses Premiumbonbon mit dem Geschmack von Schwarzer Johannisbeere schmeckt fruchtig-frisch und überrascht den Gaumen. Das Tüpfelchen auf dem i? Seine köstliche Füllung.\",\n                },\n                {\n                    name: \"Em-eukal Salbei\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2450_EE_Salbei_zh_75g__2020.png\",\n                    like: 12,\n                    dislike: 5,\n                    description: \"Aromatisch und kräuterig-frisch umschmeichelt das Salbeibonbon den Gaumen. Jedes einzelne dieser Premiumbonbons enthält feinen Salbeiextrakt und hochwertige ätherische Öle. Lecker wirkt immer!\",\n                },\n                {\n                    name: \"Em-eukal Honig\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2445_EE_Honig_gefuellt_zh_75g__2020.png\",\n                    like: 2,\n                    dislike: 89,\n                    description: \"Eine Komposition der Extraklasse: Dieses Premiumbonbon enthält sanften Yucatan-Honig. Und sorgt angenehm mild für einen ganz besonderen Geschmack, der seine Wirkung zeigt.\",\n                },\n                {\n                    name: \"Em-eukal Anis-Fenchel\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2455_EE_Anis-Fenchel_zfr_75g__2020.png\",\n                    like: 9,\n                    dislike: 37,\n                    description: \"Eine traditionelle Bonbonspezialität – mit ätherischen Ölen und feinem Anis- und Fenchelextrakt. Die sorgsam ausgewählten Ingredienzien sorgen für einen kräutersanften Geschmack, der seine Wirkung zeigt.\",\n                },\n                {\n                    name: \"Em-eukal Milde Minze\",\n                    picture_url: \"https://www.em-eukal.com/wp-content/uploads/sites/2/2437_EE_MildeMinze_zfr_75g__2020.png\",\n                    like: 98,\n                    dislike: 7,\n                    description: \"Dieses Premiumbonbon verspricht Extra-Genuss: Ätherische Öle aus der Mitcham-Minze verwöhnen angenehm mild. Und zusammen mit hochwertigen, natürlichen Zutaten entsteht ein intensiv-erfrischendes Gaumenaroma.\",\n                },\n            ]);\n        }\n\n        if (await demoReviews.estimatedDocumentCount() === 0) {\n            demoReviews.insertMany([\n                {\n                    product_id: 1,\n                    name: \"Ursula123\",\n                    comment: \"Hallo liebe Em-eukal Liebhaber!!! Das klassische Em-eukal ist einfach das beste! <3 Ich habe es vergangenen Mittwoch meinem lieben Enkel Ferdinand gekauft. Sehr erfreut war der Bub!! <3 Ich trage seit dem immer mindestens eine Packung Em-eukal-Klassisch in meiner selbstgestrickten Handtasche!! Liebste Grüße aus der Südpfalz, eure Ursula und Manfred.\",\n                    like: true\n                },\n                {\n                    product_id: 2,\n                    name: \"asdasd\",\n                    comment: \"asdasd\",\n                    like: true\n                },\n                {\n                    product_id: 3,\n                    name: \"haksdhja\",\n                    comment: \"haksdhjlkal\",\n                    like: true\n                },\n                {\n                    product_id: 4,\n                    name: \"lkajlsjdl\",\n                    comment: \"alksdl\",\n                    like: true\n                },\n            ])\n        }\n    }\n}\n\nexport default new DatabaseFactory();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Backend/src/database.js b/Backend/src/database.js
+--- a/Backend/src/database.js	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/Backend/src/database.js	(date 1651683097828)
+@@ -100,25 +100,25 @@
+         if (await demoReviews.estimatedDocumentCount() === 0) {
+             demoReviews.insertMany([
+                 {
+-                    product_id: 1,
++                    product_id: "627016259a23cbb9fb947573",
+                     name: "Ursula123",
+                     comment: "Hallo liebe Em-eukal Liebhaber!!! Das klassische Em-eukal ist einfach das beste! <3 Ich habe es vergangenen Mittwoch meinem lieben Enkel Ferdinand gekauft. Sehr erfreut war der Bub!! <3 Ich trage seit dem immer mindestens eine Packung Em-eukal-Klassisch in meiner selbstgestrickten Handtasche!! Liebste Grüße aus der Südpfalz, eure Ursula und Manfred.",
+                     like: true
+                 },
+                 {
+-                    product_id: 2,
++                    product_id: "2",
+                     name: "asdasd",
+                     comment: "asdasd",
+                     like: true
+                 },
+                 {
+-                    product_id: 3,
++                    product_id: "3",
+                     name: "haksdhja",
+                     comment: "haksdhjlkal",
+                     like: true
+                 },
+                 {
+-                    product_id: 4,
++                    product_id: "4",
+                     name: "lkajlsjdl",
+                     comment: "alksdl",
+                     like: true
+Index: Backend/src/controller/product_review.controller.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\"\n\nimport {wrapHandler} from \"../utils.js\";\nimport ReviewService from \"../service/review.service.js\";\n\nexport default class Product_reviewController{\n\n    constructor(server, prefix) {\n        this._service = new ReviewService();\n        this._prefix = prefix;\n\n        server.get(prefix + \"/:id\", wrapHandler(this, this.read));\n    }\n\n    async read(req, res, next) {\n        let result = await this._service.readAll(req.query);\n        var advancedResult = [];\n\n        for(var i = 0;i <= result.length; i++){\n\n            if(result[i]._id == req.params.id){\n                advancedResult.push(result[i]);\n            }\n\n        }\n\n        res.sendResult(advancedResult);\n\n        return next();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Backend/src/controller/product_review.controller.js b/Backend/src/controller/product_review.controller.js
+--- a/Backend/src/controller/product_review.controller.js	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/Backend/src/controller/product_review.controller.js	(date 1651687529284)
+@@ -14,15 +14,14 @@
+ 
+     async read(req, res, next) {
+         let result = await this._service.readAll(req.query);
++
+         var advancedResult = [];
+ 
+-        for(var i = 0;i <= result.length; i++){
+-
+-            if(result[i]._id == req.params.id){
+-                advancedResult.push(result[i]);
++        result.map((review) => {
++            if(review.product_id == req.params.id){
++                advancedResult.push(review);
+             }
+-
+-        }
++        })
+ 
+         res.sendResult(advancedResult);
+ 
+Index: Backend/src/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\"\n\nimport restify from \"restify\";\nimport OpenApiEnforcer from \"openapi-enforcer\";\nimport OpenApiEnforcerMiddleware from \"@dschulmeis/restify-openapi-enforcer-middleware\";\n\nimport DatabaseFactory from \"./database.js\";\nimport RootController from \"./controller/root.controller.js\";\nimport ProductController from \"./controller/product.controller.js\";\nimport ReviewController from \"./controller/review.controller.js\";\nimport Product_reviewController from \"./controller/product_review.controller\";\n\n\n// Verzeichnisnamen der Quellcodedatei ermitteln\nimport path from \"path\";\nimport { fileURLToPath } from \"url\";\nconst __dirname = path.dirname(fileURLToPath(import.meta.url));\n\n/* =============================================================================\n * SERVER-KONFIGURATION\n * =============================================================================*/\n\n// Auslesen der Umgebungsvariablen zur Konfiguration des Servers\nconst config = {\n    port:    parseInt(process.env.PORT) || 3000,\n    host:    process.env.HOST           || \"localhost\",\n    mongodb: process.env.MONGODB        || \"mongodb://localhost:27017\",\n};\n\nawait DatabaseFactory.init(config.mongodb);\n\n/* =============================================================================\n * SERVER STARTEN\n * =============================================================================*/\nconst server = restify.createServer({\n    // Bei Bedarf notwendige Serverkonfiguration hier erweitern.\n    // Vgl. http://restify.com/docs/server-api/#createserver\n});\n\nserver.use(restify.plugins.acceptParser(server.acceptable));\nserver.use(restify.plugins.authorizationParser());\nserver.use(restify.plugins.dateParser());\nserver.use(restify.plugins.queryParser());\nserver.use(restify.plugins.jsonp());\nserver.use(restify.plugins.gzipResponse());\nserver.use(restify.plugins.bodyParser());\nserver.use(restify.plugins.throttle({burst: 100, rate: 50, ip: true}));\nserver.use(restify.plugins.conditionalRequest());\n\n// Protokollzeile für jede HTTP-Anfrage auf der Konsole ausgeben\nserver.pre((req, res, next) => {\n    console.log(new Date(), req.method, req.url, `HTTP ${req.httpVersion}`);\n    return next();\n});\n\n// Exceptions ebenfalls auf der Konsole protokollieren, um die betroffene\n// Quellcodestelle identifizieren zu können.\nserver.on(\"restifyError\", function(req, res, err, callback) {\n    console.error(`${err.stack}\\n`);\n    return callback();\n});\n\n// CORS-Header setzen, um Zugriffe von anderen URLs außer der Backend-URL zuzulassen.\n// Außerdem OPTIONS-Anfragen (sog. CORS-Preflight) immer mit Status 200 beantworten,\n// damit die Browser ändernde Aufrufe tatsächlich durchführen.\nserver.use((req, res, next) => {\n    res.header(\"Access-Control-Allow-Origin\", req.header(\"Origin\"));\n    res.header(\"Access-Control-Allow-Methods\", req.header(\"Access-Control-Request-Method\"));\n    res.header(\"Access-Control-Allow-Headers\", req.header(\"Access-Control-Request-Headers\"));\n    res.header(\"Access-Control-Allow-Credentials\", \"true\");\n    res.header(\"Vary\", \"Origin\");\n    return next();\n});\n\nserver.opts(\"*\", (req, res, next) => {\n    res.status(200);\n    res.send({});\n    next();\n});\n\n// Anfragen und Antworten gegen die OpenAPI-Spezifikation prüfen und dabei\n// fehlerhafte Anfragen oder Antworten mit einer Exception ablehnen.\nconst openApiFile = path.relative(\"\", path.join(__dirname, \"api\", \"openapi.yaml\"));\nconst openApiValidation = await OpenApiEnforcer(openApiFile, {fullResult: true});\n\nconst openApiEnforcer = await OpenApiEnforcer(openApiFile, {\n    hideWarnings: true,\n    componentOptions: {\n        production: process.env.NODE_ENV === \"production\"\n    },\n});\n\nserver.use(OpenApiEnforcerMiddleware(openApiEnforcer));\n\n// HTTP-Controller registrieren\nnew RootController(server, \"/\");\nnew ProductController(server, \"/products\");\nnew ReviewController(server, \"/reviews\");\nnew Product_reviewController(server, \"/productReviews\");\n\n// Server tatsächlich starten\nserver.listen(config.port, config.host, function() {\n    console.log();\n    console.log(\"----------------\");\n    console.log(\"Em-eukal-Server\");\n    console.log(\"----------------\");\n    console.log();\n    console.log(\"Verwendete Konfiguration:\");\n    console.log();\n    console.log(config);\n    console.log();\n    console.log(\"Nutzen Sie die folgenden Umgebungsvariablen zum Anpassen der Konfiguration:\");\n    console.log();\n    console.log(\"    PORT:    Server-TCP-Port\");\n    console.log(\"    HOST:    Hostname oder IP-Adresse des Servers\");\n    console.log(\"    MONGODB: Verbindungsdaten zur Mongo-DB\");\n    console.log();\n    console.log(`OpenAPI-Spezifikation: ${openApiFile}`)\n\n    if (openApiValidation.error) {\n        console.error(`${openApiValidation.error}\\n`);\n    }\n\n    if (openApiValidation.warning) {\n        console.warn(`${openApiValidation.warning}\\n`);\n    }\n\n    console.log();\n});\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Backend/src/index.js b/Backend/src/index.js
+--- a/Backend/src/index.js	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/Backend/src/index.js	(date 1651685353883)
+@@ -8,7 +8,7 @@
+ import RootController from "./controller/root.controller.js";
+ import ProductController from "./controller/product.controller.js";
+ import ReviewController from "./controller/review.controller.js";
+-import Product_reviewController from "./controller/product_review.controller";
++import Product_reviewController from "./controller/product_review.controller.js";
+ 
+ 
+ // Verzeichnisnamen der Quellcodedatei ermitteln
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d40a82d9-12a4-419a-8290-5bb2f936a409\" name=\"Changes\" comment=\"Fixed bugs\">\n      <change afterPath=\"$PROJECT_DIR$/Backend/src/controller/product_review.controller.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/Backend/src/controller/product.controller.js\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\n  </component>\n  <component name=\"ProjectId\" id=\"25vObRwGUntcJHwF1IjhVS0e8Ea\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"C:/Users/julpf/WebstormProjects/portfolio_verteilte_systeme\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration default=\"true\" type=\"SwaggerCodegen\">\n      <option name=\"activeConfigurationType\" value=\"FILE\" />\n      <option name=\"configurationPath\" value=\"\" />\n      <option name=\"customJreEnabled\" value=\"false\" />\n      <option name=\"customTemplatesPath\" value=\"\" />\n      <option name=\"enableDebugLogging\" value=\"false\" />\n      <option name=\"generateToPath\" value=\"$PROJECT_DIR$/gen\" />\n      <option name=\"generationParameters\">\n        <list />\n      </option>\n      <option name=\"generatorPath\" value=\"https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar\" />\n      <option name=\"jdkPath\" value=\"\" />\n      <option name=\"language\" value=\"java\" />\n      <option name=\"specificationPath\" value=\"$PROJECT_DIR$/Backend/src/api/openapi.yaml\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"d40a82d9-12a4-419a-8290-5bb2f936a409\" name=\"Changes\" comment=\"\" />\n      <created>1646404167918</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1646404167918</updated>\n      <workItem from=\"1646404170347\" duration=\"13000\" />\n      <workItem from=\"1646407476145\" duration=\"133000\" />\n      <workItem from=\"1646407625097\" duration=\"36000\" />\n      <workItem from=\"1647616025702\" duration=\"279000\" />\n      <workItem from=\"1647776858811\" duration=\"169000\" />\n      <workItem from=\"1648036385094\" duration=\"137000\" />\n      <workItem from=\"1649159215692\" duration=\"6246000\" />\n      <workItem from=\"1651504222050\" duration=\"8155000\" />\n      <workItem from=\"1651678518932\" duration=\"1758000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Added template project\">\n      <created>1647616227893</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647616227893</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Updated openapi.yaml\">\n      <created>1649159509089</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1649159509089</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Dummy-Data; Changed Console-Output\">\n      <created>1651508964525</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651508964525</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Expanded ProductController\">\n      <created>1651511156384</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651511156384</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Implemented ProductService\">\n      <created>1651512623498</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651512623498</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Fixed bugs\">\n      <created>1651594205245</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1651594205245</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Added template project\" />\n    <MESSAGE value=\"Updated openapi.yaml\" />\n    <MESSAGE value=\"Dummy-Data; Changed Console-Output\" />\n    <MESSAGE value=\"Expanded ProductController\" />\n    <MESSAGE value=\"Implemented ProductService\" />\n    <MESSAGE value=\"Fixed bugs\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed bugs\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cb26089aab39669f20d7b434a306c818ea122faa)
++++ b/.idea/workspace.xml	(date 1651685591694)
+@@ -1,9 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Fixed bugs">
+-      <change afterPath="$PROJECT_DIR$/Backend/src/controller/product_review.controller.js" afterDir="false" />
++    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Implemented ProductService">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/api/openapi.yaml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Backend/src/controller/product_review.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/controller/product_review.controller.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Backend/src/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/database.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/index.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Backend/src/service/review.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/service/review.service.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,9 +23,6 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/Backend/src/controller/product.controller.js" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -31,20 +32,24 @@
+   </component>
+   <component name="ProjectId" id="25vObRwGUntcJHwF1IjhVS0e8Ea" />
+   <component name="ProjectLevelVcsManager">
++    <OptionsSetting value="false" id="Update" />
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "C:/Users/julpf/WebstormProjects/portfolio_verteilte_systeme",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
+-  }
+-}]]></component>
++  <component name="PropertiesComponent">
++    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="TODO_SCOPE" value="All Places" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="nodejs_package_manager_path" value="npm" />
++    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
++    <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
+   <component name="RunManager">
+     <configuration default="true" type="SwaggerCodegen">
+       <option name="activeConfigurationType" value="FILE" />
+@@ -79,7 +84,6 @@
+       <workItem from="1648036385094" duration="137000" />
+       <workItem from="1649159215692" duration="6246000" />
+       <workItem from="1651504222050" duration="8155000" />
+-      <workItem from="1651678518932" duration="1758000" />
+     </task>
+     <task id="LOCAL-00001" summary="Added template project">
+       <created>1647616227893</created>
+@@ -116,14 +120,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1651512623498</updated>
+     </task>
+-    <task id="LOCAL-00006" summary="Fixed bugs">
+-      <created>1651594205245</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1651594205245</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -147,7 +144,6 @@
+     <MESSAGE value="Dummy-Data; Changed Console-Output" />
+     <MESSAGE value="Expanded ProductController" />
+     <MESSAGE value="Implemented ProductService" />
+-    <MESSAGE value="Fixed bugs" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs" />
++    <option name="LAST_COMMIT_MESSAGE" value="Implemented ProductService" />
+   </component>
+ </project>
+\ No newline at end of file

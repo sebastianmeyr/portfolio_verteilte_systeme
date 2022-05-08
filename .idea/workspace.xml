@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Started DetailPage">
+    <list default="true" id="d40a82d9-12a4-419a-8290-5bb2f936a409" name="Changes" comment="Designed page-list.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/page-details/page-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-details/page-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/page-list/page-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/service/review.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/service/review.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +13,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -33,21 +31,17 @@
   </component>
   <component name="ProjectId" id="25vObRwGUntcJHwF1IjhVS0e8Ea" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/julpf/WebstormProjects/portfolio_verteilte_systeme",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager">
     <configuration default="true" type="SwaggerCodegen">
       <option name="activeConfigurationType" value="FILE" />
@@ -83,6 +77,7 @@
       <workItem from="1649159215692" duration="6246000" />
       <workItem from="1651504222050" duration="8155000" />
       <workItem from="1651678518932" duration="3901000" />
+      <workItem from="1652012389493" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Added template project">
       <created>1647616227893</created>
@@ -140,14 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651687754723</updated>
     </task>
-    <task id="LOCAL-00009" summary="Started DetailPage">
-      <created>1651921472194</created>
+    <task id="LOCAL-00009" summary="Fixes product_review.controller.js, openapi.yaml">
+      <created>1651690527660</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1651921472194</updated>
+      <updated>1651690527660</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Adjusted app.css">
+      <created>1651692415286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651692415286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +176,8 @@
     <MESSAGE value="Fixed bugs" />
     <MESSAGE value="Implemented ProductReviewController" />
     <MESSAGE value="Fixed bugs in ProductReviewController, ReviewService,openAPI.yaml " />
-    <MESSAGE value="Started DetailPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started DetailPage" />
+    <MESSAGE value="Fixes product_review.controller.js, openapi.yaml" />
+    <MESSAGE value="Adjusted app.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted app.css" />
   </component>
 </project>
