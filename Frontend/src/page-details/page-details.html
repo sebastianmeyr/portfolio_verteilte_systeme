@@ -41,6 +41,23 @@
     input {
         padding-bottom: 2px;
     }
+
+    .info-div {
+        width: 100%;
+    }
+
+    .like-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .action-like {
+        width: 100px;
+        height: 30px;
+    }
 </style> 
 
 <main>
@@ -50,8 +67,15 @@
         <img src="$PICTURE_URL$">
         <div class="info-div">
             <h3>$NAME$</h3>
-            <p>Likes: $LIKE$</p>
-            <p>Dislikes: $DISLIKE$</p>
+            <div class="like-div">
+                <p>Likes: $LIKE$</p>
+                <button class="action-like">Like 💚</button>
+            </div>
+            <div class="like-div">
+                <p>Dislikes: $DISLIKE$</p>
+                <button class="action-like">Dislike 🍌</button>
+            </div>
+            
         </div>
     </div>
 
